@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 contract Weaxels is Ownable, ERC721A, ReentrancyGuard {
 
     string public CONTRACT_URI = "https://weaxels.s3.amazonaws.com/contract.json";
-    string public BASE_URI = ""
+    string public BASE_URI = "";
 
     bool public REVEALED = false;
     string public UNREVEALED_URI = "https://weaxels.s3.amazonaws.com/unrevealed.json";
@@ -78,7 +78,7 @@ contract Weaxels is Ownable, ERC721A, ReentrancyGuard {
     function tokenURI(uint256 _tokenId)
         public
         view
-        override (ERC721A, IERC721A)
+        override
         returns (string memory)
     {
         if (REVEALED) {

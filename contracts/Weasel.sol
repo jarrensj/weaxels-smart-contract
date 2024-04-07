@@ -7,18 +7,18 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract Weasel is Ownable, ERC721A, ReentrancyGuard {
+contract Weaxels is Ownable, ERC721A, ReentrancyGuard {
 
-    string public CONTRACT_URI = ""; // TODO 
-    string public BASE_URI = "" // TODO
+    string public CONTRACT_URI = "https://weaxels.s3.amazonaws.com/contract.json";
+    string public BASE_URI = ""
 
     bool public isMintEnabled = false;
 
-    uint public COLLECTION_SIZE = 10000;
-    uint public MINT_PRICE = 0.0069 ether;
-    uint public MAX_BATCH_SIZE = 10; 
+    uint public COLLECTION_SIZE = 3888;
+    uint public MINT_PRICE = 0.005 ether;
+    uint public MAX_BATCH_SIZE = 10;
 
-    constructor() ERC721A("Weasel", "W") {}
+    constructor() ERC721A("Weaxel", "WXL") {}
 
     function teamMint(uint256 quantity, address receiver) public onlyOwner {
         require(

@@ -12,6 +12,9 @@ contract Weaxels is Ownable, ERC721A, ReentrancyGuard {
     string public CONTRACT_URI = "https://weaxels.s3.amazonaws.com/contract.json";
     string public BASE_URI = ""
 
+    bool public REVEALED = false;
+    string public UNREVEALED_URI = "https://weaxels.s3.amazonaws.com/unrevealed.json";
+
     bool public isMintEnabled = false;
 
     uint public COLLECTION_SIZE = 3888;
@@ -59,8 +62,9 @@ contract Weaxels is Ownable, ERC721A, ReentrancyGuard {
         isMintEnabled = _isMintEnabled;
     }
 
-    function setBaseURI(string memory _baseURI) public onlyOwner {
+    function setBaseURI(bool _revealed, string memory _baseURI) public onlyOwner {
         BASE_URI = _baseURI;
+        REVEALED = _revealed;
     }
 
     function contractURI() public view returns (string memory) {
@@ -77,6 +81,11 @@ contract Weaxels is Ownable, ERC721A, ReentrancyGuard {
         override (ERC721A, IERC721A)
         returns (string memory)
     {
-        return string(abi.encodePacked(BASE_URI, Strings.toString(_tokenId)));
+        if (REVEALED) {
+            return
+                string(abi.encodePacked(BASE_URI, Strings.toString(_tokenId)));
+        } else {
+            return UNREVEALED_URI;
+        }
     }
 }

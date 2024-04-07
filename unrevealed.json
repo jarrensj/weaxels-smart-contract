@@ -1,0 +1,6 @@
+{
+    "image":"https://weaxels.s3.amazonaws.com/unrevealed.gif",
+    "attributes":[
+        {"trait_type":"revealed","value":"false"}
+    ]
+}

@@ -1,8 +1,8 @@
 {
-    "name": "Weasels",
-    "description": "Weasel NFTs",
-    "image": "https://weasels.s3.amazonaws.com/weasel.png",
-    "external_link": "",
-    "seller_fee_basis_points": 500,
-    "fee_recipient": ""
+    "name": "Weaxels",
+    "description": "Weaxel NFTs",
+    "image": "https://weaxels.s3.amazonaws.com/weaxel.png",
+    "external_link": "https://weaxels.com",
+    "seller_fee_basis_points": 250,
+    "fee_recipient": "0xdF38B15bb12AC579d83dBF107625f59F9f4D0BF1"
 }

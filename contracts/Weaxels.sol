@@ -62,9 +62,9 @@ contract Weaxels is Ownable, ERC721A, ReentrancyGuard {
         isMintEnabled = _isMintEnabled;
     }
 
-    function setBaseURI(bool _revealed, string memory _baseURI) public onlyOwner {
+    function setBaseURI(string memory _baseURI) public onlyOwner {
         BASE_URI = _baseURI;
-        REVEALED = _revealed;
+        REVEALED = true;
     }
 
     function contractURI() public view returns (string memory) {
